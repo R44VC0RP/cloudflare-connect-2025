@@ -8,7 +8,7 @@ export async function GET() {
     // Get all registrations from the database
     const registrations = await sql`
       SELECT name, workplace 
-      FROM hackathon_registrations 
+      FROM registrations 
       ORDER BY created_at DESC
     `
 
