@@ -9,6 +9,11 @@ export default function HackathonRegister() {
             <h1 className="text-5xl md:text-6xl font-sans text-balance">AI Hackathon Registration</h1>
             <p className="text-lg text-muted-foreground text-pretty">
               Fill out the form below to register for the AI Hackathon at Connect 2025
+              <br />
+              <br />
+              <span className="text-primary">
+                Max Team Size is 5
+              </span>
             </p>
           </div>
 

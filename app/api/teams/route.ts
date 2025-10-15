@@ -5,11 +5,14 @@ const sql = neon(process.env.DATABASE_URL!)
 
 export async function GET() {
   try {
-    // Fetch all teams
+    // Fetch teams that have space (less than 5 members)
     const teams = await sql`
-      SELECT id, name, created_at
-      FROM teams
-      ORDER BY name ASC
+      SELECT t.id, t.name, t.created_at, COUNT(r.id) as member_count
+      FROM teams t
+      LEFT JOIN registrations r ON t.id = r.team_id
+      GROUP BY t.id, t.name, t.created_at
+      HAVING COUNT(r.id) < 5
+      ORDER BY t.name ASC
     `
 
     return NextResponse.json(
