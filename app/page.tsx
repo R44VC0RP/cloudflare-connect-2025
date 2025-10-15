@@ -36,6 +36,18 @@ export default function Home() {
           </div>
 
           <div className="mt-8 text-sm text-muted-foreground font-mono">Connect 2025 • Las Vegas</div>
+
+        </div>
+        <div className="mt-8 flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 p-4">
+          <Link href="/countdown" className="text-lg px-8 text-primary">
+            Countdown
+          </Link>
+          <Link href="/list" className="text-lg px-8 text-primary">
+            List
+          </Link>
+          <Link href="/assistant-ui-giveaway" className="text-lg px-8 text-primary">
+            Assistant UI Giveaway
+          </Link>
         </div>
       </div>
     </main>
